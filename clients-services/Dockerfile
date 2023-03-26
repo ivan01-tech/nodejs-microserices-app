@@ -6,5 +6,10 @@ COPY ./package-*.json /app/
 
 RUN npm i
 
-ENV PORT=3000 \ 
-	USERS_DB_URL=mongodb://localhost/foods_db
+COPY . /app/
+
+ENV PORT=3000 	USERS_DB_URL=mongodb://localhost/clients_db
+
+EXPOSE 3000
+
+CMD [ "node" "server.js" ]
